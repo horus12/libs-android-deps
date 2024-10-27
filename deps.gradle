@@ -1,14 +1,15 @@
 
 ext {
-    Configs = [
+
+    configsDeps = [
             minSdk          : 21,
             compileSdk      : 34,
             targetSdk       : 34,
-            javaVersion     : 17,
+            javaVersion     : JavaVersion.VERSION_17,
             jvmTargetVersion: 17
     ]
 
-    Versions = [
+    versions1 = [
             kotlinVersion                           : "1.9.25",
             kotlinxSerialization                    : "1.4.1",
 
@@ -173,267 +174,320 @@ ext {
             mlKitDocumentScanner                    : "16.0.0-beta1"
     ]
 
-    Libs = [
-        kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}",
-        kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlinVersion}",
-        kotlinxSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinxSerialization}",
-        constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}",
-        multiDex = "androidx.multidex:multidex:${Versions.multidex}",
-        coreLibDesugaring = "com.android.tools:desugar_jdk_libs:${Versions.coreLibDesugaring}",
-        coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}",
-        coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesVersion}",
-        coroutinesRx2 = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${Versions.coroutinesVersion}",
+    LibsDeps = [
+        kotlin : "org.jetbrains.kotlin:kotlin-stdlib:1.9.25",
+        kotlinReflect : "org.jetbrains.kotlin:kotlin-reflect:${versions1.kotlinVersion}",
+        kotlinxSerialization : "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions1.kotlinxSerialization}",
+        constraintLayout : "androidx.constraintlayout:constraintlayout:${versions1.constraintLayout}",
+        multiDex : "androidx.multidex:multidex:${versions1.multidex}",
+        coreLibDesugaring : "com.android.tools:desugar_jdk_libs:${versions1.coreLibDesugaring}",
+        coroutines : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions1.coroutinesVersion}",
+        coroutinesCore : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions1.coroutinesVersion}",
+        coroutinesRx2 : "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${versions1.coroutinesVersion}",
 
 
-        palette = "androidx.palette:palette:${Versions.palette}",
-        material = "com.google.android.material:material:${Versions.androidMaterial}",
-        appCompat = "androidx.appcompat:appcompat:${Versions.appcompat}",
-        legacySupport = "androidx.legacy:legacy-support-v4:${Versions.legacyV4}",
-        cardView = "androidx.cardview:cardview:${Versions.supportLibraryLayout}",
-        coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}",
-        androidxAnnotation = "androidx.annotation:annotation:${Versions.androidxAnnotation}",
-        browser = "androidx.browser:browser:${Versions.androidxBrowser}",
-        recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}",
-        swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayoutVersion}",
-        preference = "androidx.preference:preference-ktx:${Versions.preference}",
-        startup = "androidx.startup:startup-runtime:${Versions.startup}",
+        palette : "androidx.palette:palette:${versions1.palette}",
+        material : "com.google.android.material:material:${versions1.androidMaterial}",
+        appCompat : "androidx.appcompat:appcompat:${versions1.appcompat}",
+        legacySupport : "androidx.legacy:legacy-support-v4:${versions1.legacyV4}",
+        cardView : "androidx.cardview:cardview:${versions1.supportLibraryLayout}",
+        coreKtx : "androidx.core:core-ktx:${versions1.coreKtx}",
+        androidxAnnotation : "androidx.annotation:annotation:${versions1.androidxAnnotation}",
+        browser : "androidx.browser:browser:${versions1.androidxBrowser}",
+        recyclerView : "androidx.recyclerview:recyclerview:${versions1.recyclerView}",
+        swipeRefreshLayout : "androidx.swiperefreshlayout:swiperefreshlayout:${versions1.swipeRefreshLayoutVersion}",
+        preference : "androidx.preference:preference-ktx:${versions1.preference}",
+        startup : "androidx.startup:startup-runtime:${versions1.startup}",
 
-        activityKtx = "androidx.activity:activity-ktx:${Versions.androidxActivityVersion}",
-        androidxBroadcast = "androidx.localbroadcastmanager:localbroadcastmanager:${Versions.androidxLocalBroadcastVersion}",
-        activity = "androidx.activity:activity:${Versions.androidxActivityVersion}",
-        androidxBiometric = "androidx.biometric:biometric:${Versions.androidxBiometric}",
-        flexbox = "com.google.android.flexbox:flexbox:${Versions.flexbox}",
-        asyncLayoutInflater = "androidx.asynclayoutinflater:asynclayoutinflater:${Versions.asyncLayoutInflater}",
-
-
-        firebaseCrashlytics = "com.google.firebase:firebase-crashlytics",
-        firebaseAnalytics = "com.google.firebase:firebase-analytics",
-        firebaseMessaging = "com.google.firebase:firebase-messaging",
-        firebaseConfig = "com.google.firebase:firebase-config",
-        firebaseDynamicLink = "com.google.firebase:firebase-dynamic-links",
-        firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebaseBom}",
-
-        mlkitBarcodeScanner = "com.google.mlkit:barcode-scanning:${Versions.mlkitBarcodeScanner}",
-        zxing = "com.google.zxing:core:${Versions.zxingVersion}",
+        activityKtx : "androidx.activity:activity-ktx:${versions1.androidxActivityVersion}",
+        androidxBroadcast : "androidx.localbroadcastmanager:localbroadcastmanager:${versions1.androidxLocalBroadcastVersion}",
+        activity : "androidx.activity:activity:${versions1.androidxActivityVersion}",
+        androidxBiometric : "androidx.biometric:biometric:${versions1.androidxBiometric}",
+        flexbox : "com.google.android.flexbox:flexbox:${versions1.flexbox}",
+        asyncLayoutInflater : "androidx.asynclayoutinflater:asynclayoutinflater:${versions1.asyncLayoutInflater}",
 
 
-        playServicesAnalytics = "com.google.android.gms:play-services-analytics:${Versions.playServicesVersion}",
-        playServicesLocation = "com.google.android.gms:play-services-location:${Versions.playServicesLocationVersion}",
-        playServicesMaps = "com.google.android.gms:play-services-maps:${Versions.playServicesVersion}",
-        playServicesSafetyNet = "com.google.android.gms:play-services-safetynet:${Versions.playServicesVersion}",
-        playServicesAuth = "com.google.android.gms:play-services-auth:${Versions.playServicesAuthVersion}",
-        adsIdentifier = "com.google.android.gms:play-services-ads-identifier:${Versions.playServicesVersion}",
-        googleRecaptchaEnterprise = "com.google.android.gms:play-services-recaptcha:${Versions.recaptchaEnterpriseVersion}",
-        newerGoogleRecaptchaEnterprise = "com.google.android.recaptcha:recaptcha:${Versions.newerRecaptchaEnterpriseVersion}",
-        playServicesAuthApiPhone = "com.google.android.gms:play-services-auth-api-phone:18.0.1",
-        tapAndPay = "com.google.android.gms:play-services-tapandpay:${Versions.tapAndPay}",
-        googlePlaces = "com.google.android.libraries.places:places:${Versions.googlePlaces}",
+        firebaseCrashlytics : "com.google.firebase:firebase-crashlytics",
+        firebaseAnalytics : "com.google.firebase:firebase-analytics",
+        firebaseMessaging : "com.google.firebase:firebase-messaging",
+        firebaseConfig : "com.google.firebase:firebase-config",
+        firebaseDynamicLink : "com.google.firebase:firebase-dynamic-links",
+        firebaseBom : "com.google.firebase:firebase-bom:${versions1.firebaseBom}",
+
+        mlkitBarcodeScanner : "com.google.mlkit:barcode-scanning:${versions1.mlkitBarcodeScanner}",
+        zxing : "com.google.zxing:core:${versions1.zxingVersion}",
 
 
-        lifecycleReactiveStreams = "androidx.lifecycle:lifecycle-reactivestreams:${Versions.lifecycle}",
-        lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime:${Versions.lifecycle}",
-        lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle}",
-        lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}",
-        lifecycleLiveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}",
-        lifecycleProcess = "androidx.lifecycle:lifecycle-process:${Versions.lifecycle}",
-        lifeCycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}",
-        lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}",
+        playServicesAnalytics : "com.google.android.gms:play-services-analytics:${versions1.playServicesVersion}",
+        playServicesLocation : "com.google.android.gms:play-services-location:${versions1.playServicesLocationVersion}",
+        playServicesMaps : "com.google.android.gms:play-services-maps:${versions1.playServicesVersion}",
+        playServicesSafetyNet : "com.google.android.gms:play-services-safetynet:${versions1.playServicesVersion}",
+        playServicesAuth : "com.google.android.gms:play-services-auth:${versions1.playServicesAuthVersion}",
+        adsIdentifier : "com.google.android.gms:play-services-ads-identifier:${versions1.playServicesVersion}",
+        googleRecaptchaEnterprise : "com.google.android.gms:play-services-recaptcha:${versions1.recaptchaEnterpriseVersion}",
+        newerGoogleRecaptchaEnterprise : "com.google.android.recaptcha:recaptcha:${versions1.newerRecaptchaEnterpriseVersion}",
+        playServicesAuthApiPhone : "com.google.android.gms:play-services-auth-api-phone:18.0.1",
+        tapAndPay : "com.google.android.gms:play-services-tapandpay:${versions1.tapAndPay}",
+        googlePlaces : "com.google.android.libraries.places:places:${versions1.googlePlaces}",
 
 
-        cameraX = "androidx.camera:camera-camera2:${Versions.cameraX}",
-        cameraXLifecycle = "androidx.camera:camera-lifecycle:${Versions.cameraX}",
-        cameraXView = "androidx.camera:camera-view:${Versions.cameraXExtras}",
+        lifecycleReactiveStreams : "androidx.lifecycle:lifecycle-reactivestreams:${versions1.lifecycle}",
+        lifecycleRuntime : "androidx.lifecycle:lifecycle-runtime:${versions1.lifecycle}",
+        lifecycleCompiler : "androidx.lifecycle:lifecycle-compiler:${versions1.lifecycle}",
+        lifecycleViewModelKtx : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions1.lifecycle}",
+        lifecycleLiveDataKtx : "androidx.lifecycle:lifecycle-livedata-ktx:${versions1.lifecycle}",
+        lifecycleProcess : "androidx.lifecycle:lifecycle-process:${versions1.lifecycle}",
+        lifeCycleCommon : "androidx.lifecycle:lifecycle-common-java8:${versions1.lifecycle}",
+        lifecycleRuntimeKtx : "androidx.lifecycle:lifecycle-runtime-ktx:${versions1.lifecycle}",
 
 
-        workManagerKtx = "androidx.work:work-runtime-ktx:${Versions.workManagerKtx}",
+        cameraX : "androidx.camera:camera-camera2:${versions1.cameraX}",
+        cameraXLifecycle : "androidx.camera:camera-lifecycle:${versions1.cameraX}",
+        cameraXView : "androidx.camera:camera-view:${versions1.cameraXExtras}",
 
 
-        macrobenchmark = "androidx.benchmark:benchmark-macro-junit4:${Versions.macrobenchmark}",
-        uiAutomator = "androidx.test.uiautomator:uiautomator:${Versions.uiAutomator}",
-        profileInstaller = "androidx.profileinstaller:profileinstaller:${Versions.profileInstaller}",
+        workManagerKtx : "androidx.work:work-runtime-ktx:${versions1.workManagerKtx}",
+
+
+        macrobenchmark : "androidx.benchmark:benchmark-macro-junit4:${versions1.macrobenchmark}",
+        uiAutomator : "androidx.test.uiautomator:uiautomator:${versions1.uiAutomator}",
+        profileInstaller : "androidx.profileinstaller:profileinstaller:${versions1.profileInstaller}",
 
         //                          External Lib's
 
-        flipper = "com.facebook.flipper:flipper:${Versions.flipper}",
-        flipperLeakCanary = "com.facebook.flipper:flipper-leakcanary2-plugin:${Versions.flipper}",
-        soLoader = "com.facebook.soloader:soloader:${Versions.soloaderVersion}",
-        flipperNetwork = "com.facebook.flipper:flipper-network-plugin:${Versions.flipper}",
+        flipper : "com.facebook.flipper:flipper:${versions1.flipper}",
+        flipperLeakCanary : "com.facebook.flipper:flipper-leakcanary2-plugin:${versions1.flipper}",
+        soLoader : "com.facebook.soloader:soloader:${versions1.soloaderVersion}",
+        flipperNetwork : "com.facebook.flipper:flipper-network-plugin:${versions1.flipper}",
 
 
-        leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}",
+        leakCanary : "com.squareup.leakcanary:leakcanary-android:${versions1.leakCanary}",
 
 
-        glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}",
-        glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glideVersion}",
-        glideTransformation = "jp.wasabeef:glide-transformations:${Versions.glideTransformationVersion}",
+        glide : "com.github.bumptech.glide:glide:${versions1.glideVersion}",
+        glideCompiler : "com.github.bumptech.glide:compiler:${versions1.glideVersion}",
+        glideTransformation : "jp.wasabeef:glide-transformations:${versions1.glideTransformationVersion}",
 
 
-        epoxy = "com.airbnb.android:epoxy:${Versions.epoxyVersion}",
-        epoxyProcessor = "com.airbnb.android:epoxy-processor:${Versions.epoxyVersion}",
+        epoxy : "com.airbnb.android:epoxy:${versions1.epoxyVersion}",
+        epoxyProcessor : "com.airbnb.android:epoxy-processor:${versions1.epoxyVersion}",
 
 
-        retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}",
-        retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}",
-        retrofitKSerializationConverter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.retrofitKSerializationConverterVersion}",
-        retrofitRxJava2Adapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitVersion}",
+        retrofit : "com.squareup.retrofit2:retrofit:${versions1.retrofitVersion}",
+        retrofitGsonConverter : "com.squareup.retrofit2:converter-gson:${versions1.retrofitVersion}",
+        retrofitKSerializationConverter : "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${versions1.retrofitKSerializationConverterVersion}",
+        retrofitRxJava2Adapter : "com.squareup.retrofit2:adapter-rxjava2:${versions1.retrofitVersion}",
 
 
-        okhttp = "com.squareup.okhttp3:okhttp:${Versions.okHttpVersion}",
-        okhttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpLoggingVersion}",
+        okhttp : "com.squareup.okhttp3:okhttp:${versions1.okHttpVersion}",
+        okhttpLoggingInterceptor : "com.squareup.okhttp3:logging-interceptor:${versions1.okHttpLoggingVersion}",
 
 
-        gson = "com.google.code.gson:gson:${Versions.gsonVersion}",
+        gson : "com.google.code.gson:gson:${versions1.gsonVersion}",
 
 
-        deepLinkDispatch = "com.airbnb:deeplinkdispatch:${Versions.deeplinkVersion}",
-        deepLinkDispatchProcessor = "com.airbnb:deeplinkdispatch-processor:${Versions.deeplinkVersion}",
+        deepLinkDispatch : "com.airbnb:deeplinkdispatch:${versions1.deeplinkVersion}",
+        deepLinkDispatchProcessor : "com.airbnb:deeplinkdispatch-processor:${versions1.deeplinkVersion}",
 
 
-        rxJava2 = "io.reactivex.rxjava2:rxjava:${Versions.rxJavaVersion}",
-        rxJava2Android = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroidVersion}",
-        rxJava2Reley = "com.jakewharton.rxrelay2:rxrelay:${Versions.rxRelayVersion}",
-        rxJava2Binding = "com.jakewharton.rxbinding3:rxbinding-appcompat:${Versions.rxbindingVersion}",
+        rxJava2 : "io.reactivex.rxjava2:rxjava:${versions1.rxJavaVersion}",
+        rxJava2Android : "io.reactivex.rxjava2:rxandroid:${versions1.rxAndroidVersion}",
+        rxJava2Reley : "com.jakewharton.rxrelay2:rxrelay:${versions1.rxRelayVersion}",
+        rxJava2Binding : "com.jakewharton.rxbinding3:rxbinding-appcompat:${versions1.rxbindingVersion}",
 
 
-        koinCore = "io.insert-koin:koin-core:${Versions.koinVersion}",
-        koinAndroid = "io.insert-koin:koin-android:${Versions.koinVersion}",
-        koinScope = "io.insert-koin:koin-androidx-scope:${Versions.koinVersion}",
-        koinViewModel = "io.insert-koin:koin-androidx-viewmodel:${Versions.koinVersion}",
+        koinCore : "io.insert-koin:koin-core:${versions1.koinVersion}",
+        koinAndroid : "io.insert-koin:koin-android:${versions1.koinVersion}",
+        koinScope : "io.insert-koin:koin-androidx-scope:${versions1.koinVersion}",
+        koinViewModel : "io.insert-koin:koin-androidx-viewmodel:${versions1.koinVersion}",
 
-        MPAndroidChart = "com.github.PhilJay:MPAndroidChart:${Versions.mpAndroidChartVersion}",
-        ioCard = "io.card:android-sdk:${Versions.cardIoVersion}",
+        MPAndroidChart : "com.github.PhilJay:MPAndroidChart:${versions1.mpAndroidChartVersion}",
+        ioCard : "io.card:android-sdk:${versions1.cardIoVersion}",
 
-        mixpanel = "com.mixpanel.android:mixpanel-android:${Versions.mixpanelVersion}",
-        segment = "com.segment.analytics.kotlin:android:${Versions.segmentVersion}",
-        imageCropper = "com.github.CanHub:Android-Image-Cropper:${Versions.imageCropperVersion}",
-        tweetComposer = "/libraries/twitter/tweetcompose/tweet-composer-3.0.0.aar",
-        twittercore = "/libraries/twitter/twittercore/twitter-core-3.0.0.aar",
-        twittertext = "/libraries/twitter/twittertext/twitter-text-1.14.3.jar",
-        timber = "com.jakewharton.timber:timber:${Versions.timberVersion}",
-        lottie = "com.airbnb.android:lottie:${Versions.lottieVersion}",
-        shimmerlayout = "io.supercharge:shimmerlayout:${Versions.shimmerLayoutVersion}",
-        disklrucache = "com.jakewharton:disklrucache:${Versions.lruCacheVersion}",
-        compressor = "id.zelory:compressor:${Versions.compressorVersion}",
-        roundedimageview = "com.makeramen:roundedimageview:${Versions.roundedIvVersion}",
-        badgeview = "com.github.qstumn:BadgeView:${Versions.badgeviewVersion}",
-        fotoapparat = "io.fotoapparat:fotoapparat:${Versions.fotoapparatVersion}",
-        appsflyer = "com.appsflyer:af-android-sdk:${Versions.appsflyerVersion}",
-        homereferrer = "com.miui.referrer:homereferrer:${Versions.homereferrerVersion}",
-        androidInstallReferrer = "com.android.installreferrer:installreferrer:${Versions.androidInstallReferrer}",
-        jodaTime = "joda-time:joda-time:${Versions.jodaTime}",
-        reactiveNetwork = "com.github.pwittchen:reactivenetwork:${Versions.reactiveNetwork}",
-        expandableRecyclerView = "com.github.tank777.expandable-recycler-view:expandablerecyclerview:${Versions.expandableRecyclerView}",
-        coil = "io.coil-kt:coil:${Versions.coil}",
-        coilSvg = "io.coil-kt:coil-svg:${Versions.coil}",
-        kotlinPoet = "com.squareup:kotlinpoet:${Versions.kotlinPoet}",
-        kotlinCsvJvm = "com.github.doyaaaaaken:kotlin-csv-jvm:${Versions.kotlinCsvJvm}",
-        kotlinCli = "org.jetbrains.kotlinx:kotlinx-cli:${Versions.kotlinCli}",
-        apacheCommonsText = "org.apache.commons:commons-text:${Versions.apacheCommonsText}",
-        apacheCommonsCodec = "commons-codec:commons-codec:${Versions.apacheCommonsCodec}",
+        mixpanel : "com.mixpanel.android:mixpanel-android:${versions1.mixpanelVersion}",
+        segment : "com.segment.analytics.kotlin:android:${versions1.segmentVersion}",
+        imageCropper : "com.github.CanHub:Android-Image-Cropper:${versions1.imageCropperVersion}",
+        tweetComposer : "/libraries/twitter/tweetcompose/tweet-composer-3.0.0.aar",
+        twittercore : "/libraries/twitter/twittercore/twitter-core-3.0.0.aar",
+        twittertext : "/libraries/twitter/twittertext/twitter-text-1.14.3.jar",
+        timber : "com.jakewharton.timber:timber:${versions1.timberVersion}",
+        lottie : "com.airbnb.android:lottie:${versions1.lottieVersion}",
+        shimmerlayout : "io.supercharge:shimmerlayout:${versions1.shimmerLayoutVersion}",
+        disklrucache : "com.jakewharton:disklrucache:${versions1.lruCacheVersion}",
+        compressor : "id.zelory:compressor:${versions1.compressorVersion}",
+        roundedimageview : "com.makeramen:roundedimageview:${versions1.roundedIvVersion}",
+        badgeview : "com.github.qstumn:BadgeView:${versions1.badgeviewVersion}",
+        fotoapparat : "io.fotoapparat:fotoapparat:${versions1.fotoapparatVersion}",
+        appsflyer : "com.appsflyer:af-android-sdk:${versions1.appsflyerVersion}",
+        homereferrer : "com.miui.referrer:homereferrer:${versions1.homereferrerVersion}",
+        androidInstallReferrer : "com.android.installreferrer:installreferrer:${versions1.androidInstallReferrer}",
+        jodaTime : "joda-time:joda-time:${versions1.jodaTime}",
+        reactiveNetwork : "com.github.pwittchen:reactivenetwork:${versions1.reactiveNetwork}",
+        expandableRecyclerView : "com.github.tank777.expandable-recycler-view:expandablerecyclerview:${versions1.expandableRecyclerView}",
+        coil : "io.coil-kt:coil:${versions1.coil}",
+        coilSvg : "io.coil-kt:coil-svg:${versions1.coil}",
+        kotlinPoet : "com.squareup:kotlinpoet:${versions1.kotlinPoet}",
+        kotlinCsvJvm : "com.github.doyaaaaaken:kotlin-csv-jvm:${versions1.kotlinCsvJvm}",
+        kotlinCli : "org.jetbrains.kotlinx:kotlinx-cli:${versions1.kotlinCli}",
+        apacheCommonsText : "org.apache.commons:commons-text:${versions1.apacheCommonsText}",
+        apacheCommonsCodec : "commons-codec:commons-codec:${versions1.apacheCommonsCodec}",
 
-        navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.archNavigation}",
-        navigationRuntimeKtx = "androidx.navigation:navigation-runtime-ktx:${Versions.archNavigation}",
-        navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.archNavigation}",
-        playAppUpdate = "com.google.android.play:app-update:${Versions.playAppUpdate}",
-        playAppUpdateKtx = "com.google.android.play:app-update-ktx:${Versions.playAppUpdate}",
-        playReviewKtx = "com.google.android.play:review-ktx:${Versions.playReview}",
+        navigationFragment : "androidx.navigation:navigation-fragment-ktx:${versions1.archNavigation}",
+        navigationRuntimeKtx : "androidx.navigation:navigation-runtime-ktx:${versions1.archNavigation}",
+        navigationUiKtx : "androidx.navigation:navigation-ui-ktx:${versions1.archNavigation}",
+        playAppUpdate : "com.google.android.play:app-update:${versions1.playAppUpdate}",
+        playAppUpdateKtx : "com.google.android.play:app-update-ktx:${versions1.playAppUpdate}",
+        playReviewKtx : "com.google.android.play:review-ktx:${versions1.playReview}",
 
 
-        picPayCoreArch = ":common:core-libs:corearch:lib",
-        picPayCoreArchTest = ":common:core-libs:corearch:test",
-        uiTest = "com.picpay.android:ui-test:${Versions.uiTestVersion}",
-        ui = "com.picpay.android:ui:${Versions.uiVersion}",
-        apollo3 = "com.picpay.android:apollo3:${Versions.apollo3Version}",
-        markdown = "com.picpay.android:ui-markdown:${Versions.uiMarkdownVersion}",
-        detektExtensions = "com.picpay.android:detekt-extensions:${Versions.linterExtensions}",
-        permission = "com.picpay.android:permission:${Versions.permission}",
-        fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTesting}",
-        fragment = "androidx.fragment:fragment:${Versions.fragment}",
-        fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}",
+        picPayCoreArch : ":common:core-libs:corearch:lib",
+        picPayCoreArchTest : ":common:core-libs:corearch:test",
+        uiTest : "com.picpay.android:ui-test:${versions1.uiTestVersion}",
+        ui : "com.picpay.android:ui:${versions1.uiVersion}",
+        apollo3 : "com.picpay.android:apollo3:${versions1.apollo3Version}",
+        markdown : "com.picpay.android:ui-markdown:${versions1.uiMarkdownVersion}",
+        detektExtensions : "com.picpay.android:detekt-extensions:${versions1.linterExtensions}",
+        permission : "com.picpay.android:permission:${versions1.permission}",
+        fragmentTesting : "androidx.fragment:fragment-testing:${versions1.fragmentTesting}",
+        fragment : "androidx.fragment:fragment:${versions1.fragment}",
+        fragmentKtx : "androidx.fragment:fragment-ktx:${versions1.fragmentKtx}",
 
-        adapterDelegatesViewBinding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${Versions.adapterDelegatesViewBinding}",
+        adapterDelegatesViewBinding : "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${versions1.adapterDelegatesViewBinding}",
 
 
-        zendeskSupport = "com.zendesk:support:${Versions.zendeskSupportVersion}",
-        zendeskChat = "com.zendesk:chat:${Versions.zendeskChatVersion}",
+        zendeskSupport : "com.zendesk:support:${versions1.zendeskSupportVersion}",
+        zendeskChat : "com.zendesk:chat:${versions1.zendeskChatVersion}",
 
 
-        hivemqMqttClient = "com.hivemq:hivemq-mqtt-client:${Versions.hivemqMqttClient}",
-        androidRetrostreams = "net.sourceforge.streamsupport:android-retrostreams:${Versions.androidRetroStreams}",
-        androidRetrofuture = "net.sourceforge.streamsupport:android-retrofuture:${Versions.androidRetroFutures}",
+        hivemqMqttClient : "com.hivemq:hivemq-mqtt-client:${versions1.hivemqMqttClient}",
+        androidRetrostreams : "net.sourceforge.streamsupport:android-retrostreams:${versions1.androidRetroStreams}",
+        androidRetrofuture : "net.sourceforge.streamsupport:android-retrofuture:${versions1.androidRetroFutures}",
 
 
-        sendBirdCore = "com.sendbird.sdk:sendbird-chat:${Versions.sendBirdCore}",
+        sendBirdCore : "com.sendbird.sdk:sendbird-chat:${versions1.sendBirdCore}",
 
 
-        marketingCloud = "com.salesforce.marketingcloud:marketingcloudsdk:${Versions.marketingCloudVersion}",
+        marketingCloud : "com.salesforce.marketingcloud:marketingcloudsdk:${versions1.marketingCloudVersion}",
 
 
-        robolectric = "org.robolectric:robolectric:${Versions.robolectricVersion}",
-        robolectricAnnotations = "org.robolectric:annotations:${Versions.robolectricVersion}",
+        robolectric : "org.robolectric:robolectric:${versions1.robolectricVersion}",
+        robolectricAnnotations : "org.robolectric:annotations:${versions1.robolectricVersion}",
 
 
-        reflections = "org.reflections:reflections:${Versions.reflectionsVersion}",
+        reflections : "org.reflections:reflections:${versions1.reflectionsVersion}",
 
 
-        markwonCore = "io.noties.markwon:core:${Versions.markwon}",
-        markwonHtml = "io.noties.markwon:html:${Versions.markwon}",
-        markwonImage = "io.noties.markwon:image:${Versions.markwon}",
-        markwonLinkify = "io.noties.markwon:linkify:${Versions.markwon}",
-        markwonStrikethrough = "io.noties.markwon:ext-strikethrough:${Versions.markwon}",
+        markwonCore : "io.noties.markwon:core:${versions1.markwon}",
+        markwonHtml : "io.noties.markwon:html:${versions1.markwon}",
+        markwonImage : "io.noties.markwon:image:${versions1.markwon}",
+        markwonLinkify : "io.noties.markwon:linkify:${versions1.markwon}",
+        markwonStrikethrough : "io.noties.markwon:ext-strikethrough:${versions1.markwon}",
 
 
-        viewPager = "androidx.viewpager2:viewpager2:${Versions.viewPager2}",
+        viewPager : "androidx.viewpager2:viewpager2:${versions1.viewPager2}",
 
-        spongyCastleBcpkix = "com.madgag.spongycastle:bcpkix-jdk15on:${Versions.spongyCastleVersion}",
-        spongyCastleBcpg = "com.madgag.spongycastle:bcpg-jdk15on:${Versions.spongyCastleVersion}",
+        spongyCastleBcpkix : "com.madgag.spongycastle:bcpkix-jdk15on:${versions1.spongyCastleVersion}",
+        spongyCastleBcpg : "com.madgag.spongycastle:bcpg-jdk15on:${versions1.spongyCastleVersion}",
 
 
-        dexguardRuntime = "com.guardsquare:dexguard-runtime:${Versions.dexguard}",
+        dexguardRuntime : "com.guardsquare:dexguard-runtime:${versions1.dexguard}",
 
 
-        androidDeviceNames = "com.jaredrummler:android-device-names:${Versions.androidDeviceNames}",
+        androidDeviceNames : "com.jaredrummler:android-device-names:${versions1.androidDeviceNames}",
 
 
-        detektApi = "io.gitlab.arturbosch.detekt:detekt-api:${Versions.detekt}",
-        lintApi = "com.android.tools.lint:lint-api:${Versions.lint}",
-        lintChecks = "com.android.tools.lint:lint-checks:${Versions.lint}",
+        detektApi : "io.gitlab.arturbosch.detekt:detekt-api:${versions1.detekt}",
+        lintApi : "com.android.tools.lint:lint-api:${versions1.lint}",
+        lintChecks : "com.android.tools.lint:lint-checks:${versions1.lint}",
 
 
-        benchmark = "androidx.benchmark:benchmark-gradle-plugin:${Versions.benchmark}",
+        benchmark : "androidx.benchmark:benchmark-gradle-plugin:${versions1.benchmark}",
 
 
-        jwt = "com.auth0:java-jwt:${Versions.jwt}",
+        jwt : "com.auth0:java-jwt:${versions1.jwt}",
 
 
-        suncoCore = "io.smooch:core:${Versions.sunco}",
-        suncoUi = "io.smooch:ui:${Versions.sunco}",
+        suncoCore : "io.smooch:core:${versions1.sunco}",
+        suncoUi : "io.smooch:ui:${versions1.sunco}",
 
 
-        brscanDocumento = "com.github.brain-ag:idf-sdk-documento-android:${Versions.brscanDocumentoVersion}",
+        brscanDocumento : "com.github.brain-ag:idf-sdk-documento-android:${versions1.brscanDocumentoVersion}",
 
 
-        dynatrace = "com.dynatrace.agent:agent-android:${Versions.dynatrace}",
+        dynatrace : "com.dynatrace.agent:agent-android:${versions1.dynatrace}",
 
 
-        ramaleon = "com.picpay.android.reactnative:ramaleon:${Versions.ramaleon}",
+        ramaleon : "com.picpay.android.reactnative:ramaleon:${versions1.ramaleon}",
 
 
-        pdfBoxAndroid = "com.tom-roush:pdfbox-android:${Versions.pdfBoxAndroid}",
+        pdfBoxAndroid : "com.tom-roush:pdfbox-android:${versions1.pdfBoxAndroid}",
 
 
-        ads = "com.google.android.gms:play-services-ads-lite:${Versions.ads}",
+        ads : "com.google.android.gms:play-services-ads-lite:${versions1.ads}",
 
 
-        room = "androidx.room:room-runtime:${Versions.roomVersion}",
-        roomKtx = "androidx.room:room-ktx:${Versions.roomVersion}",
-        roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}",
+        room : "androidx.room:room-runtime:${versions1.roomVersion}",
+        roomKtx : "androidx.room:room-ktx:${versions1.roomVersion}",
+        roomCompiler : "androidx.room:room-compiler:${versions1.roomVersion}",
 
 
-        mlKitDocumentScanner = "com.google.android.gms:play-services-mlkit-document-scanner:${Versions.mlKitDocumentScanner}",
+        mlKitDocumentScanner : "com.google.android.gms:play-services-mlkit-document-scanner:${versions1.mlKitDocumentScanner}",
 
 
-        bouncyCastleBcpkix = "org.bouncycastle:bcpkix-jdk15to18:${Versions.bouncyCastleVersion}",
-        bouncyCastleBcprov = "org.bouncycastle:bcprov-jdk15to18:${Versions.bouncyCastleVersion}"
+        bouncyCastleBcpkix : "org.bouncycastle:bcpkix-jdk15to18:${versions1.bouncyCastleVersion}",
+        bouncyCastleBcprov : "org.bouncycastle:bcprov-jdk15to18:${versions1.bouncyCastleVersion}"
+    ]
+    TestLibsDeps = [
+            // Test Android
+            runner                     : "androidx.test:runner:${versions1.androidTestVersion}",
+            rules                      : "androidx.test:rules:${versions1.androidTestVersion}",
+
+            // Espresso
+            espressoCore               : "androidx.test.espresso:espresso-core:${versions1.espressoVersion}",
+            espressoIntents            : "androidx.test.espresso:espresso-intents:${versions1.espressoVersion}",
+            espressoContrib            : "androidx.test.espresso:espresso-contrib:${versions1.espressoVersion}",
+            espressoWeb                : "androidx.test.espresso:espresso-web:${versions1.espressoVersion}",
+            espressoAccessibility       : "androidx.test.espresso:espresso-accessibility:${versions1.espressoVersion}",
+            junitExt                   : "androidx.test.ext:junit:${versions1.testExtJunit}",
+            koin                       : "io.insert-koin:koin-test:${versions1.koinVersion}",
+            mockwebserver              : "com.squareup.okhttp3:mockwebserver:${versions1.mockWebserverVersion}",
+            mockitoAndroid             : "org.mockito:mockito-android:${versions1.mockito}",
+            mockitoCore                : "org.mockito:mockito-core:${versions1.mockito}",
+            mockitoInline              : "org.mockito:mockito-inline:${versions1.mockito}",
+            rxIdle                     : "com.squareup.rx.idler:rx2-idler:${versions1.rx2Idler}",
+            testMonitor                : "androidx.test:monitor:${versions1.testMonitor}",
+
+            assertJ                    : "org.assertj:assertj-core:${versions1.assertJVersion}",
+            hamcrest                   : "org.hamcrest:hamcrest-library:${versions1.hamcrestVersion}",
+            mockitoKotlin              : "org.mockito.kotlin:mockito-kotlin:${versions1.mockitoKotlin}",
+            arcCore                    : "androidx.arch.core:core-testing:${versions1.androidCoreVersion}",
+            junit                      : "junit:junit:${versions1.junitTest}",
+            junit5                     : "org.junit.jupiter:junit-jupiter-api:${versions1.junit5Test}",
+            junit5Engine               : "org.junit.jupiter:junit-jupiter-engine:${versions1.junit5Test}",
+            junit5Params               : "org.junit.jupiter:junit-jupiter-params:${versions1.junit5Test}",
+            junit5Vintage              : "org.junit.vintage:junit-vintage-engine:${versions1.junit5Test}",
+            json                       : "org.json:json:${versions1.jsonAndroid}",
+            contractPact               : "au.com.dius.pact.consumer:junit:${versions1.contractPact}",
+            byteBuddyAndroid           : "net.bytebuddy:byte-buddy-android:${versions1.byteBuddyAndroidVersion}",
+
+            kotlinTest                 : "org.jetbrains.kotlin:kotlin-test:${versions1.kotlinVersion}",
+            kotlinTestJUnit            : "org.jetbrains.kotlin:kotlin-test-junit:${versions1.kotlinVersion}",
+            coroutinesTest             : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions1.coroutinesVersion}",
+
+            fragment                   : "androidx.fragment:fragment-testing:${versions1.fragment}",
+            faker                      : "com.github.blocoio:faker:${versions1.faker}",
+            core                       : "androidx.test:core:${versions1.coreTest}",
+            coreKtx                    : "androidx.test:core-ktx:${versions1.coreTest}",
+            turbine                    : "app.cash.turbine:turbine:${versions1.turbine}",
+
+            mockk                      : "io.mockk:mockk:${versions1.mockk}",
+            mockkAndroid               : "io.mockk:mockk-android:${versions1.mockk}",
+
+            detektTest                 : "io.gitlab.arturbosch.detekt:detekt-test:${versions1.detekt}",
+            lintTest                   : "com.android.tools.lint:lint-tests:${versions1.lint}",
+            lifecycleTest              : "androidx.lifecycle:lifecycle-runtime-testing:${versions1.lifecycle}",
+
+            // Room
+            roomTest                   : "androidx.room:room-testing:${versions1.roomVersion}"
     ]
 }
