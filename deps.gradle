@@ -1,0 +1,439 @@
+
+ext {
+    Configs = [
+            minSdk          : 21,
+            compileSdk      : 34,
+            targetSdk       : 34,
+            javaVersion     : 17,
+            jvmTargetVersion: 17
+    ]
+
+    Versions = [
+            kotlinVersion                           : "1.9.25",
+            kotlinxSerialization                    : "1.4.1",
+
+            // Google Libs
+            palette                                 : "1.0.0",
+            constraintLayout                        : "2.0.4",
+            androidxAnnotation                      : "1.5.0",
+            androidxBrowser                         : "1.2.0",
+            androidMaterial                         : "1.3.0",
+            supportLibraryLayout                    : "1.0.0",
+            legacyV4                                : "1.0.0",
+            multidex                                : "2.0.1",
+            coreLibDesugaring                       : "1.0.9",
+            recyclerView                            : "1.2.1",
+            swipeRefreshLayoutVersion               : "1.1.0",
+            coroutinesVersion                       : "1.6.4",
+            roomVersion                             : "2.4.3",
+
+            firebaseBom                             : "33.2.0",
+
+            mlkitBarcodeScanner                     : "17.1.0",
+            zxingVersion                            : "3.3.1",
+
+            cameraX                                 : "1.2.3",
+            cameraXExtras                           : "1.2.3",
+
+            playServicesVersion                     : "18.0.1",
+            playServicesAuthVersion                 : "20.4.0",
+            playServicesLocationVersion              : "21.0.1",
+            recaptchaEnterpriseVersion              : "17.0.1",
+            newerRecaptchaEnterpriseVersion         : "18.6.1",
+            googlePlaces                            : "3.2.0",
+
+            tapAndPay                               : "18.3.4",
+
+            appcompat                               : "1.3.1",
+            lifecycle                               : "2.5.1",
+            coreKtx                                 : "1.9.0",
+            androidxActivityVersion                 : "1.7.0",
+            androidxLocalBroadcastVersion           : "1.0.0",
+            androidxBiometric                       : "1.1.0-rc01",
+            flexbox                                 : "3.0.0",
+            preference                              : "1.1.1",
+            startup                                 : "1.1.1",
+            workManagerKtx                          : "2.8.1",
+            macrobenchmark                          : "1.2.0",
+            uiAutomator                             : "2.2.0",
+            profileInstaller                        : "1.3.1",
+            asyncLayoutInflater                     : "1.0.0",
+
+            // External Libs
+            mpAndroidChartVersion                   : "v3.1.0-alpha",
+            cardIoVersion                           : "5.5.1",
+            flipper                                 : "0.179.0",
+            leakCanary                              : "2.10",
+            soloaderVersion                         : "0.9.0",
+            glideVersion                            : "4.11.0",
+            glideTransformationVersion              : "4.3.0",
+            epoxyVersion                            : "4.6.2",
+            retrofitVersion                         : "2.8.2",
+            retrofitKSerializationConverterVersion   : "0.8.0",
+            okHttpVersion                           : "4.10.0",
+            okHttpLoggingVersion                    : "4.10.0",
+            gsonVersion                             : "2.8.9",
+            deeplinkVersion                         : "6.1.0",
+            rxJavaVersion                           : "2.2.17",
+            rxAndroidVersion                        : "2.1.1",
+            rxRelayVersion                          : "2.1.1",
+            mixpanelVersion                         : "5.8.4",
+            segmentVersion                          : "1.11.0",
+            koinVersion                             : "2.2.3",
+            imageCropperVersion                    : "3.3.5",
+            timberVersion                           : "4.7.1",
+            lottieVersion                           : "3.3.1",
+            shimmerLayoutVersion                    : "2.1.0",
+            lruCacheVersion                         : "2.0.2",
+            compressorVersion                       : "2.1.1",
+            roundedIvVersion                        : "2.3.0",
+            badgeviewVersion                        : "1.1.3",
+            fotoapparatVersion                      : "2.7.0",
+            rxbindingVersion                        : "3.0.0",
+            archNavigation                          : "2.5.0",
+            appsflyerVersion                        : "6.12.2",
+            homereferrerVersion                     : "1.0.0.6",
+            androidInstallReferrer                  : "1.1",
+            playAppUpdate                           : "2.1.0",
+            playReview                              : "2.0.1",
+            jodaTime                                : "2.10.5",
+            reactiveNetwork                         : "3.0.8-rx2",
+            expandableRecyclerView                  : "1.6@aar",
+            zendeskSupportVersion                   : "5.1.1",
+            zendeskChatVersion                      : "3.3.4",
+            hivemqMqttClient                        : "1.1.4",
+            androidRetroStreams                     : "1.7.1",
+            androidRetroFutures                     : "1.7.1",
+            sendBirdCore                            : "4.15.7",
+            adapterDelegatesViewBinding             : "4.3.0",
+            markwon                                 : "4.2.1",
+            viewPager2                              : "1.0.0",
+            dexguard                                : "9.8.2",
+            androidDeviceNames                      : "2.0.0",
+            coil                                    : "1.3.2",
+            jwt                                      : "3.18.3",
+            sunco                                   : "9.4.0",
+            brscanDocumentoVersion                   : "4.0.5",
+            kotlinPoet                              : "1.11.0",
+            kotlinCsvJvm                            : "1.5.0",
+            kotlinCli                               : "0.3.5",
+            apacheCommonsText                       : "1.9",
+            dynatrace                               : "8.267.1.1005",
+            ramaleon                                : "1.0.0",
+            pdfium                                  : "1.9.1",
+            ads                                      : "23.0.0",
+            marketingCloudVersion                   : "8.1.4",
+            apacheCommonsCodec                      : "1.15",
+            pdfBoxAndroid                           : "2.0.27.0",
+
+            // Bouncy Castle - Cryptography
+            bouncyCastleVersion                     : "1.68",
+
+            // Spongy Castle - Cryptography
+            spongyCastleVersion                     : "1.58.0.0",
+
+            // PicPay Android Libraries
+            uiVersion                               : "16.15.7",
+            uiTestVersion                           : "16.13.1",
+            uiMarkdownVersion                       : "16.13.1",
+            apollo3Version                          : "0.0.143-alpha",
+            analytics                               : "0.2.10",
+            linterExtensions                        : "0.1.3",
+            permission                               : "1.0.2",
+
+            // Test Libs
+            espressoVersion                         : "3.4.0",
+            assertJVersion                          : "3.20.2",
+            hamcrestVersion                         : "1.3",
+            benchmark                                : "1.0.0",
+            mockWebserverVersion                    : "4.10.0",
+            androidTestVersion                      : "1.3.0",
+            androidCoreVersion                      : "2.1.0",
+            junitTest                               : "4.13",
+            junit5Test                              : "5.8.2",
+            testExtJunit                           : "1.1.2",
+            rx2Idler                               : "0.11.0",
+            testMonitor                             : "1.6.1",
+            mockitoKotlin                           : "3.2.0",
+            mockito                                 : "3.3.3",
+            jsonAndroid                             : "20190722",
+            fragmentTesting                         : "1.3.0-alpha08",
+            fragment                                : "1.3.6",
+            fragmentKtx                             : "1.3.1",
+            faker                                   : "1.2.8",
+            robolectricVersion                      : "4.11.1",
+            reflectionsVersion                      : "0.9.12",
+            coreTest                                : "1.4.0",
+            turbine                                 : "0.5.2",
+            mockk                                   : "1.13.11",
+            byteBuddyAndroidVersion                 : "1.10.14",
+            detekt                                  : "1.23.6",
+            lint                                     : "30.0.2",
+            contractPact                            : "4.2.9",
+            mlKitDocumentScanner                    : "16.0.0-beta1"
+    ]
+
+    Libs = [
+        kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}",
+        kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlinVersion}",
+        kotlinxSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinxSerialization}",
+        constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}",
+        multiDex = "androidx.multidex:multidex:${Versions.multidex}",
+        coreLibDesugaring = "com.android.tools:desugar_jdk_libs:${Versions.coreLibDesugaring}",
+        coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}",
+        coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesVersion}",
+        coroutinesRx2 = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${Versions.coroutinesVersion}",
+
+
+        palette = "androidx.palette:palette:${Versions.palette}",
+        material = "com.google.android.material:material:${Versions.androidMaterial}",
+        appCompat = "androidx.appcompat:appcompat:${Versions.appcompat}",
+        legacySupport = "androidx.legacy:legacy-support-v4:${Versions.legacyV4}",
+        cardView = "androidx.cardview:cardview:${Versions.supportLibraryLayout}",
+        coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}",
+        androidxAnnotation = "androidx.annotation:annotation:${Versions.androidxAnnotation}",
+        browser = "androidx.browser:browser:${Versions.androidxBrowser}",
+        recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}",
+        swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayoutVersion}",
+        preference = "androidx.preference:preference-ktx:${Versions.preference}",
+        startup = "androidx.startup:startup-runtime:${Versions.startup}",
+
+        activityKtx = "androidx.activity:activity-ktx:${Versions.androidxActivityVersion}",
+        androidxBroadcast = "androidx.localbroadcastmanager:localbroadcastmanager:${Versions.androidxLocalBroadcastVersion}",
+        activity = "androidx.activity:activity:${Versions.androidxActivityVersion}",
+        androidxBiometric = "androidx.biometric:biometric:${Versions.androidxBiometric}",
+        flexbox = "com.google.android.flexbox:flexbox:${Versions.flexbox}",
+        asyncLayoutInflater = "androidx.asynclayoutinflater:asynclayoutinflater:${Versions.asyncLayoutInflater}",
+
+
+        firebaseCrashlytics = "com.google.firebase:firebase-crashlytics",
+        firebaseAnalytics = "com.google.firebase:firebase-analytics",
+        firebaseMessaging = "com.google.firebase:firebase-messaging",
+        firebaseConfig = "com.google.firebase:firebase-config",
+        firebaseDynamicLink = "com.google.firebase:firebase-dynamic-links",
+        firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebaseBom}",
+
+        mlkitBarcodeScanner = "com.google.mlkit:barcode-scanning:${Versions.mlkitBarcodeScanner}",
+        zxing = "com.google.zxing:core:${Versions.zxingVersion}",
+
+
+        playServicesAnalytics = "com.google.android.gms:play-services-analytics:${Versions.playServicesVersion}",
+        playServicesLocation = "com.google.android.gms:play-services-location:${Versions.playServicesLocationVersion}",
+        playServicesMaps = "com.google.android.gms:play-services-maps:${Versions.playServicesVersion}",
+        playServicesSafetyNet = "com.google.android.gms:play-services-safetynet:${Versions.playServicesVersion}",
+        playServicesAuth = "com.google.android.gms:play-services-auth:${Versions.playServicesAuthVersion}",
+        adsIdentifier = "com.google.android.gms:play-services-ads-identifier:${Versions.playServicesVersion}",
+        googleRecaptchaEnterprise = "com.google.android.gms:play-services-recaptcha:${Versions.recaptchaEnterpriseVersion}",
+        newerGoogleRecaptchaEnterprise = "com.google.android.recaptcha:recaptcha:${Versions.newerRecaptchaEnterpriseVersion}",
+        playServicesAuthApiPhone = "com.google.android.gms:play-services-auth-api-phone:18.0.1",
+        tapAndPay = "com.google.android.gms:play-services-tapandpay:${Versions.tapAndPay}",
+        googlePlaces = "com.google.android.libraries.places:places:${Versions.googlePlaces}",
+
+
+        lifecycleReactiveStreams = "androidx.lifecycle:lifecycle-reactivestreams:${Versions.lifecycle}",
+        lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime:${Versions.lifecycle}",
+        lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle}",
+        lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}",
+        lifecycleLiveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}",
+        lifecycleProcess = "androidx.lifecycle:lifecycle-process:${Versions.lifecycle}",
+        lifeCycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}",
+        lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}",
+
+
+        cameraX = "androidx.camera:camera-camera2:${Versions.cameraX}",
+        cameraXLifecycle = "androidx.camera:camera-lifecycle:${Versions.cameraX}",
+        cameraXView = "androidx.camera:camera-view:${Versions.cameraXExtras}",
+
+
+        workManagerKtx = "androidx.work:work-runtime-ktx:${Versions.workManagerKtx}",
+
+
+        macrobenchmark = "androidx.benchmark:benchmark-macro-junit4:${Versions.macrobenchmark}",
+        uiAutomator = "androidx.test.uiautomator:uiautomator:${Versions.uiAutomator}",
+        profileInstaller = "androidx.profileinstaller:profileinstaller:${Versions.profileInstaller}",
+
+        //                          External Lib's
+
+        flipper = "com.facebook.flipper:flipper:${Versions.flipper}",
+        flipperLeakCanary = "com.facebook.flipper:flipper-leakcanary2-plugin:${Versions.flipper}",
+        soLoader = "com.facebook.soloader:soloader:${Versions.soloaderVersion}",
+        flipperNetwork = "com.facebook.flipper:flipper-network-plugin:${Versions.flipper}",
+
+
+        leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}",
+
+
+        glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}",
+        glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glideVersion}",
+        glideTransformation = "jp.wasabeef:glide-transformations:${Versions.glideTransformationVersion}",
+
+
+        epoxy = "com.airbnb.android:epoxy:${Versions.epoxyVersion}",
+        epoxyProcessor = "com.airbnb.android:epoxy-processor:${Versions.epoxyVersion}",
+
+
+        retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}",
+        retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}",
+        retrofitKSerializationConverter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.retrofitKSerializationConverterVersion}",
+        retrofitRxJava2Adapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitVersion}",
+
+
+        okhttp = "com.squareup.okhttp3:okhttp:${Versions.okHttpVersion}",
+        okhttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpLoggingVersion}",
+
+
+        gson = "com.google.code.gson:gson:${Versions.gsonVersion}",
+
+
+        deepLinkDispatch = "com.airbnb:deeplinkdispatch:${Versions.deeplinkVersion}",
+        deepLinkDispatchProcessor = "com.airbnb:deeplinkdispatch-processor:${Versions.deeplinkVersion}",
+
+
+        rxJava2 = "io.reactivex.rxjava2:rxjava:${Versions.rxJavaVersion}",
+        rxJava2Android = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroidVersion}",
+        rxJava2Reley = "com.jakewharton.rxrelay2:rxrelay:${Versions.rxRelayVersion}",
+        rxJava2Binding = "com.jakewharton.rxbinding3:rxbinding-appcompat:${Versions.rxbindingVersion}",
+
+
+        koinCore = "io.insert-koin:koin-core:${Versions.koinVersion}",
+        koinAndroid = "io.insert-koin:koin-android:${Versions.koinVersion}",
+        koinScope = "io.insert-koin:koin-androidx-scope:${Versions.koinVersion}",
+        koinViewModel = "io.insert-koin:koin-androidx-viewmodel:${Versions.koinVersion}",
+
+        MPAndroidChart = "com.github.PhilJay:MPAndroidChart:${Versions.mpAndroidChartVersion}",
+        ioCard = "io.card:android-sdk:${Versions.cardIoVersion}",
+
+        mixpanel = "com.mixpanel.android:mixpanel-android:${Versions.mixpanelVersion}",
+        segment = "com.segment.analytics.kotlin:android:${Versions.segmentVersion}",
+        imageCropper = "com.github.CanHub:Android-Image-Cropper:${Versions.imageCropperVersion}",
+        tweetComposer = "/libraries/twitter/tweetcompose/tweet-composer-3.0.0.aar",
+        twittercore = "/libraries/twitter/twittercore/twitter-core-3.0.0.aar",
+        twittertext = "/libraries/twitter/twittertext/twitter-text-1.14.3.jar",
+        timber = "com.jakewharton.timber:timber:${Versions.timberVersion}",
+        lottie = "com.airbnb.android:lottie:${Versions.lottieVersion}",
+        shimmerlayout = "io.supercharge:shimmerlayout:${Versions.shimmerLayoutVersion}",
+        disklrucache = "com.jakewharton:disklrucache:${Versions.lruCacheVersion}",
+        compressor = "id.zelory:compressor:${Versions.compressorVersion}",
+        roundedimageview = "com.makeramen:roundedimageview:${Versions.roundedIvVersion}",
+        badgeview = "com.github.qstumn:BadgeView:${Versions.badgeviewVersion}",
+        fotoapparat = "io.fotoapparat:fotoapparat:${Versions.fotoapparatVersion}",
+        appsflyer = "com.appsflyer:af-android-sdk:${Versions.appsflyerVersion}",
+        homereferrer = "com.miui.referrer:homereferrer:${Versions.homereferrerVersion}",
+        androidInstallReferrer = "com.android.installreferrer:installreferrer:${Versions.androidInstallReferrer}",
+        jodaTime = "joda-time:joda-time:${Versions.jodaTime}",
+        reactiveNetwork = "com.github.pwittchen:reactivenetwork:${Versions.reactiveNetwork}",
+        expandableRecyclerView = "com.github.tank777.expandable-recycler-view:expandablerecyclerview:${Versions.expandableRecyclerView}",
+        coil = "io.coil-kt:coil:${Versions.coil}",
+        coilSvg = "io.coil-kt:coil-svg:${Versions.coil}",
+        kotlinPoet = "com.squareup:kotlinpoet:${Versions.kotlinPoet}",
+        kotlinCsvJvm = "com.github.doyaaaaaken:kotlin-csv-jvm:${Versions.kotlinCsvJvm}",
+        kotlinCli = "org.jetbrains.kotlinx:kotlinx-cli:${Versions.kotlinCli}",
+        apacheCommonsText = "org.apache.commons:commons-text:${Versions.apacheCommonsText}",
+        apacheCommonsCodec = "commons-codec:commons-codec:${Versions.apacheCommonsCodec}",
+
+        navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.archNavigation}",
+        navigationRuntimeKtx = "androidx.navigation:navigation-runtime-ktx:${Versions.archNavigation}",
+        navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.archNavigation}",
+        playAppUpdate = "com.google.android.play:app-update:${Versions.playAppUpdate}",
+        playAppUpdateKtx = "com.google.android.play:app-update-ktx:${Versions.playAppUpdate}",
+        playReviewKtx = "com.google.android.play:review-ktx:${Versions.playReview}",
+
+
+        picPayCoreArch = ":common:core-libs:corearch:lib",
+        picPayCoreArchTest = ":common:core-libs:corearch:test",
+        uiTest = "com.picpay.android:ui-test:${Versions.uiTestVersion}",
+        ui = "com.picpay.android:ui:${Versions.uiVersion}",
+        apollo3 = "com.picpay.android:apollo3:${Versions.apollo3Version}",
+        markdown = "com.picpay.android:ui-markdown:${Versions.uiMarkdownVersion}",
+        detektExtensions = "com.picpay.android:detekt-extensions:${Versions.linterExtensions}",
+        permission = "com.picpay.android:permission:${Versions.permission}",
+        fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTesting}",
+        fragment = "androidx.fragment:fragment:${Versions.fragment}",
+        fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}",
+
+        adapterDelegatesViewBinding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${Versions.adapterDelegatesViewBinding}",
+
+
+        zendeskSupport = "com.zendesk:support:${Versions.zendeskSupportVersion}",
+        zendeskChat = "com.zendesk:chat:${Versions.zendeskChatVersion}",
+
+
+        hivemqMqttClient = "com.hivemq:hivemq-mqtt-client:${Versions.hivemqMqttClient}",
+        androidRetrostreams = "net.sourceforge.streamsupport:android-retrostreams:${Versions.androidRetroStreams}",
+        androidRetrofuture = "net.sourceforge.streamsupport:android-retrofuture:${Versions.androidRetroFutures}",
+
+
+        sendBirdCore = "com.sendbird.sdk:sendbird-chat:${Versions.sendBirdCore}",
+
+
+        marketingCloud = "com.salesforce.marketingcloud:marketingcloudsdk:${Versions.marketingCloudVersion}",
+
+
+        robolectric = "org.robolectric:robolectric:${Versions.robolectricVersion}",
+        robolectricAnnotations = "org.robolectric:annotations:${Versions.robolectricVersion}",
+
+
+        reflections = "org.reflections:reflections:${Versions.reflectionsVersion}",
+
+
+        markwonCore = "io.noties.markwon:core:${Versions.markwon}",
+        markwonHtml = "io.noties.markwon:html:${Versions.markwon}",
+        markwonImage = "io.noties.markwon:image:${Versions.markwon}",
+        markwonLinkify = "io.noties.markwon:linkify:${Versions.markwon}",
+        markwonStrikethrough = "io.noties.markwon:ext-strikethrough:${Versions.markwon}",
+
+
+        viewPager = "androidx.viewpager2:viewpager2:${Versions.viewPager2}",
+
+        spongyCastleBcpkix = "com.madgag.spongycastle:bcpkix-jdk15on:${Versions.spongyCastleVersion}",
+        spongyCastleBcpg = "com.madgag.spongycastle:bcpg-jdk15on:${Versions.spongyCastleVersion}",
+
+
+        dexguardRuntime = "com.guardsquare:dexguard-runtime:${Versions.dexguard}",
+
+
+        androidDeviceNames = "com.jaredrummler:android-device-names:${Versions.androidDeviceNames}",
+
+
+        detektApi = "io.gitlab.arturbosch.detekt:detekt-api:${Versions.detekt}",
+        lintApi = "com.android.tools.lint:lint-api:${Versions.lint}",
+        lintChecks = "com.android.tools.lint:lint-checks:${Versions.lint}",
+
+
+        benchmark = "androidx.benchmark:benchmark-gradle-plugin:${Versions.benchmark}",
+
+
+        jwt = "com.auth0:java-jwt:${Versions.jwt}",
+
+
+        suncoCore = "io.smooch:core:${Versions.sunco}",
+        suncoUi = "io.smooch:ui:${Versions.sunco}",
+
+
+        brscanDocumento = "com.github.brain-ag:idf-sdk-documento-android:${Versions.brscanDocumentoVersion}",
+
+
+        dynatrace = "com.dynatrace.agent:agent-android:${Versions.dynatrace}",
+
+
+        ramaleon = "com.picpay.android.reactnative:ramaleon:${Versions.ramaleon}",
+
+
+        pdfBoxAndroid = "com.tom-roush:pdfbox-android:${Versions.pdfBoxAndroid}",
+
+
+        ads = "com.google.android.gms:play-services-ads-lite:${Versions.ads}",
+
+
+        room = "androidx.room:room-runtime:${Versions.roomVersion}",
+        roomKtx = "androidx.room:room-ktx:${Versions.roomVersion}",
+        roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}",
+
+
+        mlKitDocumentScanner = "com.google.android.gms:play-services-mlkit-document-scanner:${Versions.mlKitDocumentScanner}",
+
+
+        bouncyCastleBcpkix = "org.bouncycastle:bcpkix-jdk15to18:${Versions.bouncyCastleVersion}",
+        bouncyCastleBcprov = "org.bouncycastle:bcprov-jdk15to18:${Versions.bouncyCastleVersion}"
+    ]
+}
